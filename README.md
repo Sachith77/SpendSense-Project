@@ -56,7 +56,7 @@ MIT License
 
 
 Sachith Reddy
-- GitHub: [@sachithreddy](https://github.com/sachithreddy)
+- GitHub: [@sachithreddy](https://github.com/Sachith77)
 
 
 
