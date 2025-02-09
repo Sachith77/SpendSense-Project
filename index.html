@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendSense | Smart Expense Tracking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>SpendSense</h1>
+            </div>
+            <p class="tagline">Track Smarter, Spend Better</p>
+        </div>
+
+        <div class="main-content">
+            <div class="expense-form-container">
+                <h2>Add New Expense</h2>
+                <form id="expenseForm">
+                    <div class="form-group">
+                        <input type="text" id="expenseTitle" placeholder="Expense Description" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="expenseAmount" placeholder="Amount" required>
+                        <select id="expenseCurrency">
+                            <option value="">Select Currency</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="expenseCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="food">🍽️ Food</option>
+                            <option value="transport">🚗 Transport</option>
+                            <option value="utilities">⚡ Utilities</option>
+                            <option value="entertainment">🎬 Entertainment</option>
+                            <option value="shopping">🛍️ Shopping</option>
+                            <option value="others">📌 Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="expenseDate" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Add Expense</button>
+                </form>
+            </div>
+
+            <div class="summary-container">
+                <div class="currency-converter">
+                    <h3>View All Expenses In:</h3>
+                    <select id="displayCurrency">
+                        <option value="">Select Currency</option>
+                    </select>
+                </div>
+                <div class="total-expenses">
+                    <h3>Total Expenses</h3>
+                    <p id="totalAmount">0.00</p>
+                    <button id="resetButton" class="btn-reset">Reset All Data</button>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <h2>Expense Distribution</h2>
+                <canvas id="expenseChart"></canvas>
+            </div>
+
+            <div class="expense-list-container">
+                <h2>Recent Expenses</h2>
+                <div id="expenseList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
